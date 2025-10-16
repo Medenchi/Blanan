@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали тарифа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.history.back()">← Назад</button>
+        
+        <div class="tariff-details">
+            <h1 class="tariff-title" id="tariffName">Тариф Лайт</h1>
+            
+            <div class="details-content">
+                <img src="tariff1-1.jpg" alt="Тариф" class="detail-image">
+                
+                <div class="details-text">
+                    <h3>Что входит в тариф:</h3>
+                    <ul>
+                        <li>✓ Функция номер один</li>
+                        <li>✓ Функция номер два</li>
+                        <li>✓ Функция номер три</li>
+                        <li>✓ Поддержка 24/7</li>
+                        <li>✓ Доступ к базе знаний</li>
+                    </ul>
+                    
+                    <div class="price-block">
+                        <span class="price">9 999 ₽</span>
+                        <span class="period">/ месяц</span>
+                    </div>
+                    
+                    <button class="order-btn">Оформить заказ</button>
+                </div>
+            </div>
+            
+            <div class="description">
+                <h3>Подробное описание</h3>
+                <p>
+                    Это тестовое описание тарифа. Здесь будет подробная информация
+                    о всех возможностях и преимуществах выбранного тарифа.
+                    Можно добавить любой текст, который нужен для презентации.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const tariffName = urlParams.get('name') || 'Лайт';
+        document.getElementById('tariffName').textContent = `Тариф ${tariffName}`;
+    </script>
+</body>
+</html>
