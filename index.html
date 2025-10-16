@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши тарифы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Выберите свой тариф</h1>
+        
+        <!-- Тариф 1 -->
+        <div class="tariff-card">
+            <div class="gallery">
+                <button class="gallery-btn prev" onclick="changeSlide(0, -1)">❮</button>
+                <img class="gallery-image" id="gallery-0" src="tariff1-1.jpg" alt="Тариф Лайт">
+                <button class="gallery-btn next" onclick="changeSlide(0, 1)">❯</button>
+                <div class="dots">
+                    <span class="dot active" onclick="setSlide(0, 0)"></span>
+                    <span class="dot" onclick="setSlide(0, 1)"></span>
+                    <span class="dot" onclick="setSlide(0, 2)"></span>
+                </div>
+            </div>
+            <a href="tariff.html?name=Лайт" class="tariff-name">Лайт</a>
+        </div>
+
+        <!-- Тариф 2 -->
+        <div class="tariff-card">
+            <div class="gallery">
+                <button class="gallery-btn prev" onclick="changeSlide(1, -1)">❮</button>
+                <img class="gallery-image" id="gallery-1" src="tariff2-1.jpg" alt="Тариф Стандарт">
+                <button class="gallery-btn next" onclick="changeSlide(1, 1)">❯</button>
+                <div class="dots">
+                    <span class="dot active" onclick="setSlide(1, 0)"></span>
+                    <span class="dot" onclick="setSlide(1, 1)"></span>
+                    <span class="dot" onclick="setSlide(1, 2)"></span>
+                </div>
+            </div>
+            <a href="tariff.html?name=Стандарт" class="tariff-name">Стандарт</a>
+        </div>
+
+        <!-- Тариф 3 -->
+        <div class="tariff-card">
+            <div class="gallery">
+                <button class="gallery-btn prev" onclick="changeSlide(2, -1)">❮</button>
+                <img class="gallery-image" id="gallery-2" src="tariff3-1.jpg" alt="Тариф Премиум">
+                <button class="gallery-btn next" onclick="changeSlide(2, 1)">❯</button>
+                <div class="dots">
+                    <span class="dot active" onclick="setSlide(2, 0)"></span>
+                    <span class="dot" onclick="setSlide(2, 1)"></span>
+                    <span class="dot" onclick="setSlide(2, 2)"></span>
+                </div>
+            </div>
+            <a href="tariff.html?name=Премиум" class="tariff-name">Премиум</a>
+        </div>
+
+        <!-- Карусель видео -->
+        <h2 class="section-title">Наши работы</h2>
+        <div class="video-carousel">
+            <div class="video-container active">
+                <video class="video-player" src="video1.mp4" controls></video>
+                <p class="video-description">Описание первого видео - пример нашей работы</p>
+            </div>
+            <div class="video-container">
+                <video class="video-player" src="video2.mp4" controls></video>
+                <p class="video-description">Описание второго видео - еще один проект</p>
+            </div>
+            <div class="video-container">
+                <video class="video-player" src="video3.mp4" controls></video>
+                <p class="video-description">Описание третьего видео - наши достижения</p>
+            </div>
+        </div>
+        <div class="video-controls">
+            <button class="video-nav-btn" onclick="changeVideo(-1)">❮</button>
+            <div class="video-dots">
+                <span class="video-dot active" onclick="setVideo(0)"></span>
+                <span class="video-dot" onclick="setVideo(1)"></span>
+                <span class="video-dot" onclick="setVideo(2)"></span>
+            </div>
+            <button class="video-nav-btn" onclick="changeVideo(1)">❯</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
