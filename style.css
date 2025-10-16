@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(45deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255,255,255,0.1);
+}
+
+/* Карточки тарифов */
+.tariff-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tariff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+}
+
+/* Галерея */
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.gallery-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-btn.prev {
+    left: 10px;
+}
+
+.gallery-btn.next {
+    right: 10px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+}
+
+.tariff-name {
+    display: block;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    background: linear-gradient(45deg, #333, #555);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.tariff-name:hover {
+    background: linear-gradient(45deg, #444, #666);
+    transform: scale(1.02);
+}
+
+/* Видео карусель */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 60px 0 40px;
+    color: #fff;
+}
+
+.video-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.video-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-player {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    background: #000;
+}
+
+.video-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: 300;
+    color: #ccc;
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.video-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.video-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.video-dots {
+    display: flex;
+    gap: 15px;
+}
+
+.video-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.video-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+/* Страница деталей */
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tariff-details {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tariff-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.details-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.detail-image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.details-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.details-text ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.details-text li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.price-block {
+    margin: 30px 0;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.period {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.order-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(45deg, #444, #666);
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.order-btn:hover {
+    background: linear-gradient(45deg, #555, #777);
+    transform: scale(1.02);
+}
+
+.description {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.description h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        height: 250px;
+    }
+    
+    .details-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-player {
+        height: 250px;
+    }
+}
